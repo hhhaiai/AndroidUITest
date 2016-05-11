@@ -45,6 +45,7 @@ public class MainGridPage extends BasePage {
 	 * @param tabIndex
 	 */
 	public void enterMainTab(int tabIndex) {
+		System.out.println("进入关键代码部分了！前方高能！");
 		switch (tabIndex) {
 		case TAB_DISCOVERY:
 			Log.i(LOG_TAG, "进入发现");
@@ -58,10 +59,16 @@ public class MainGridPage extends BasePage {
 		case TAB_ACCOUNT:
 			Log.i(LOG_TAG, "进入账号");
 		}
+		System.out.println("TAB_INDICATOR到底有没有值，看这里："+TAB_INDICATOR);
 		View viMainTab = orange.getView(TAB_INDICATOR);
+		//System.out.println("orange能不能get到view1，看这里："+viMainTab.getId());
 		orange.waitForView(viMainTab);
+		System.out.println("orange.waitForView执行成功了没有，看这里！");
+		System.out.println("TAB_SUB_TITLE到底有没有值，看这里："+TAB_SUB_TITLE);
 		View viTab = orange.getView(viMainTab, TAB_SUB_TITLE, tabIndex);
+		//System.out.println("orange能不能get到view2，看这里："+viTab.getId());
 		orange.clickOnView(viTab);
+		System.out.println("orange.clickOnView执行成功了没有，看这里！");
 	}
 	
 	/**

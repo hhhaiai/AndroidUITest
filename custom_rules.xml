@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="custom_rules" default="release">
+<target name="-pre-compile">
+    <echo message="JARPATH=${toString:project.all.jars.path}"></echo>
+
+    <property name="repository" value="D:.m2/repository"></property>
+    <path id="orangeJar">
+        <path path="${toString:project.all.jars.path}"></path>
+        <pathelement location="${repository}/orange-0.6.2.jar"></pathelement>
+        <pathelement location="${repository}/robotium/robotium-solo-5.2.1.jar"></pathelement>
+        <pathelement location="${repository}/junit/junit/3.8.1/junit-3.8.1.jar"></pathelement>
+    </path>
+
+    <path id="project.all.jars.path">
+        <path refid="orangeJar"></path>
+    </path>
+
+    <echo message="JARPATH=${toString:project.all.jars.path}"></echo>
+</target>
+</project>

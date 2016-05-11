@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classes timeout="300" maxCount="2" >
+    <class name="com.netease.mobile.autotest.test.LoginTest">
+		<methods>
+			<include name="testSucceedToLogin" />
+		</methods>	
+	</class>
+</classes>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<testng-results>
+  <suite name="OrangeUIAutoTest" duration-ms="141311" started-at="2016-05-11T15:05:04Z" finished-at="2016-05-11T15:07:25Z">
+    <test name="com.netease.mobile.autotest.test.LoginTest">
+      <class name="com.netease.mobile.autotest.test.LoginTest">
+        <test-method name="testSucceedToLogin" signature="testSucceedToLogin()" started-at="2016-05-11T15:06:47Z" finished-at="2016-05-11T15:07:23Z" duration-ms="33404" status="PASS"/>
+      </class>
+    </test>
+  </suite>
+</testng-results>

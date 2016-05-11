@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project
+    name="execute Orange on my computer"
+    basedir="."
+    default="execute_Orange" >
+
+    <path id="cpath" >
+
+        <fileset dir="D:.m2/repository" >
+
+            <include name="orange-0.6.2.jar" />
+
+            <include name="robotium/robotium-solo-5.2.1.jar" />
+            
+            <include name="junit/junit/3.8.1/junit-3.8.1.jar" />
+        </fileset>
+    </path>
+    
+    
+    <!-- 设置一些默认值 -->
+	<property name="configFile"  value="config_linux.properties" />
+	<property name="globalparameterfile"  value="./src/com/netease/mobile/autotest/utils/GlobalParameter.java" />
+	<!-- <property name="target"  value="android-8,android-10,android-15,android-16,android-17" /> -->
+	<property name="target"  value="" />
+	<property name="maillists"  value="" />
+	<property name="testCaseFile"  value="MainTestCases.xml" />
+	<property name="devicename"  value="4df72aad457530fd" />
+	<property name="username"  value="androidauto7@163.com" />
+	<property name="password"  value="qa1234" />
+	<property name="login_mode" value="URS"/>
+	<property name="screenshotPath"  value="" />
+
+    <!-- 产生ant release需要的文件 -->
+    <target
+        name="update_project">
+
+        <exec
+            executable="cmd"
+            failonerror="true" >
+
+            <arg line="/c android project -n PrisAndroidUITest -p ." />
+        </exec>
+    </target>
+
+    <!-- 使用ant编译测试程序为一个apk文件 -->
+    <target
+        name="ant_release"
+        depends="update_project" >
+
+        <exec
+            executable="cmd"
+            failonerror="true" >
+
+            <arg line="/c ant release" />
+        </exec>
+    </target>
+
+    <!-- 执行libs下的Orange.jar -->
+    <target
+        name="execute_Orange"
+        depends="ant_release" >
+
+        <exec
+            executable="cmd"
+            failonerror="true" >
+
+            <arg line="/c java -jar D:.m2/repository/orange-0.6.2.jar ${configFile} " />
+        </exec>
+    </target>
+
+</project>
