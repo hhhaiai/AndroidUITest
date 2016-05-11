@@ -51,7 +51,7 @@
             executable="cmd"
             failonerror="true" >
 
-            <arg line="/c ant release" />
+            <arg line="/c ant clean release" />
         </exec>
     </target>
 
